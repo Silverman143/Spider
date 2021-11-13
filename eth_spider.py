@@ -12,8 +12,6 @@ import tgBot
 global amount
 
 def guess():
-    amount+=1
-    print(amount)
     keccak = sha3.keccak_256()
 
     priv = SigningKey.generate(curve=SECP256k1)
@@ -45,9 +43,11 @@ def guess():
         tgBot.SendData(data)
     print(data)
 
-    if (amount%100 == 0):
-        tgBot.SendData(str(amount))
+
 
 while 1:
     guess()
+    amount+=1
+    if (amount%100 == 0):
+        tgBot.SendData(str(amount))
     # sleep(1)
