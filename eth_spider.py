@@ -44,7 +44,7 @@ def guess():
 
 amount = 0
 
-while amount:
+while True:
     guess()
     amount+=1
     if (amount%100 == 0):
