@@ -9,7 +9,6 @@ from bs4 import BeautifulSoup
 TEST = False
 import tgBot
 
-global amount
 
 def guess():
     keccak = sha3.keccak_256()
@@ -43,9 +42,9 @@ def guess():
         tgBot.SendData(data)
     print(data)
 
+amount = 0
 
-
-while 1:
+while amount:
     guess()
     amount+=1
     if (amount%100 == 0):
