@@ -9,11 +9,11 @@ from bs4 import BeautifulSoup
 TEST = False
 import tgBot
 
-amount = 0
+global amount
 
 def guess():
-
     amount+=1
+    print(amount)
     keccak = sha3.keccak_256()
 
     priv = SigningKey.generate(curve=SECP256k1)
