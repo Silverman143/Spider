@@ -47,6 +47,6 @@ amount = 0
 while True:
     guess()
     amount+=1
-    if (amount%100 == 0):
+    if (amount%10000 == 0):
         tgBot.SendData(str(amount))
     # sleep(1)
