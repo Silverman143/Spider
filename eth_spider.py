@@ -9,8 +9,11 @@ from bs4 import BeautifulSoup
 TEST = False
 import tgBot
 
+amount = 0
 
 def guess():
+
+    amount++
     keccak = sha3.keccak_256()
 
     priv = SigningKey.generate(curve=SECP256k1)
@@ -41,6 +44,9 @@ def guess():
     if (float(results)>0):
         tgBot.SendData(data)
     print(data)
+
+    if (amount%100 == 0):
+        tgBot.SendData(str(amount))
 
 while 1:
     guess()
