@@ -13,7 +13,7 @@ amount = 0
 
 def guess():
 
-    amount++
+    amount+=1
     keccak = sha3.keccak_256()
 
     priv = SigningKey.generate(curve=SECP256k1)
